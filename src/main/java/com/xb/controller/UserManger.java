@@ -49,6 +49,9 @@ public class UserManger {
     public Result login(@RequestParam Integer page,@RequestParam Integer rows){
         PageHelper.startPage(page,rows);
         List<User> list = userSerive.selctList();
+        for (User user : list) {
+            user.setPassword("不告你");
+        }
         PageInfo<User> pageInfo = new PageInfo<>(list);
         //总记录数
         long total = pageInfo.getTotal();
@@ -78,6 +81,7 @@ public class UserManger {
     @GetMapping("/serchById/{id}")
     public Result serchByid(@PathVariable("id") Integer id){
         User user = userSerive.getById(id);
+        user.setPassword("不告你");
         return Result.ok().data("user",user);
     }
     /**
