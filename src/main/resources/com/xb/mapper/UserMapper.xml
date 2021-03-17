@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xb.mapper.UserMapper">
+    <insert id="inserUser" parameterType="com.xb.entity.User">
+        INSERT INTO `user`(username,`password`) VALUES(#{userName},#{password});
+    </insert>
+    <update id="updateById" parameterType="user">
+        update user set username = #{username} where id = #{id}
+    </update>
+    <delete id="deleteById" parameterType="integer">
+        delete from user where id = #{id}
+    </delete>
+
+    <select id="selectByName" resultType="com.xb.entity.User" parameterType="user">
+        select * from user where username = #{username}
+    </select>
+    <select id="selectList" resultType="com.xb.entity.User">
+        select * from user
+    </select>
+    <select id="selectById" resultType="com.xb.entity.User" parameterType="integer">
+        select * from user where id = #{id}
+    </select>
+</mapper>
