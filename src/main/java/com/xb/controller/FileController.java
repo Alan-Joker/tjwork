@@ -20,6 +20,7 @@ import java.util.List;
  * @create 2021/4/1 7:37
  */
 @RestController
+@RequestMapping("/file/")
 public class FileController {
 
     @Autowired
