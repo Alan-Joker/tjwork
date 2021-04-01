@@ -1,7 +1,8 @@
-package com.xb.service;
+package com.xb.service.impl;
 
 import com.xb.entity.User;
 import com.xb.mapper.UserMapper;
+import com.xb.service.UserSerive;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
