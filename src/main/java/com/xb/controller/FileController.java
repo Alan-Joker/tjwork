@@ -19,6 +19,7 @@ import java.util.List;
  * @Author Alan_
  * @create 2021/4/1 7:37
  */
+@CrossOrigin(origins = {"http://localhost:3000", "null"})
 @RestController
 @RequestMapping("/file/")
 public class FileController {

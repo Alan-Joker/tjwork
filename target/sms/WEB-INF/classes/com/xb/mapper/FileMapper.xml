@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xb.mapper.FileMapper">
+    <insert id="saveFile" parameterType="Filemanager">
+        insert into filemanager(filename,username,type,url,count) values(#{filename},#{username}
+        ,#{type},#{url},#{count})
+    </insert>
+    <update id="updateCountByfilename">
+        update filemanager set count = #{i} where filename = #{filename}
+    </update>
+
+    <select id="selectCountByFileName" resultType="java.lang.Integer" parameterType="string">
+        select count from filemanager where filename = #{username}
+    </select>
+    <select id="serachFileBytype" resultType="com.xb.entity.Filemanager" parameterType="string">
+        select * from filemanager where type = #{type}
+    </select>
+    <select id="findAll" resultType="com.xb.entity.Filemanager">
+        select * from filemanager
+    </select>
+</mapper>

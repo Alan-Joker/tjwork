@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tjwork:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tjwork</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="sms.war">
+      <element id="artifact" artifact-name="tjwork:war exploded" />
+    </root>
+  </artifact>
+</component>
